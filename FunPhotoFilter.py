@@ -4,10 +4,13 @@ from PIL import Image, ImageTk, ImageOps
 
 current_image = None
 
-def load_image():
+def loading_image():
     global current_image
     file_path = file_dialog.askopenfilename()
 
     if file_path:
+        current_image = Image.open(file_path)
+        show_image(current_image)
+
     
 
