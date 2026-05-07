@@ -6,7 +6,7 @@ current_image = None
 
 def loading_image():
     global current_image
-    file_path = file_dialog.askopenfilename()
+    file_path = filedialog.askopenfilename()
 
     if file_path:
         current_image = Image.open(file_path)
@@ -14,13 +14,13 @@ def loading_image():
 
 # trying to show image in GUI window
 
-def showcase_image(img):
-    img = img.resize(400,400)
+def show_image(img):
+    img = img.resize((400,400))
 
-    img_Tk = ImageTk.PhotoImage(img)
+    img_tk = ImageTk.PhotoImage(img)
 
-    image_label.config(image=img_Tk)
-    image_label.image = img_Tk 
+    image_label.config(image=img_tk)
+    image_label.image = img_tk 
 
 
     
