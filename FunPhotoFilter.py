@@ -29,5 +29,7 @@ window.title("Fun Photo Filters")
 image_label = tk.Label(window)
 image_label.pack()
 
-    
+tk.Button(window, text= "Load Image", command= loading_image).pack()
+
+window.mainloop
 
