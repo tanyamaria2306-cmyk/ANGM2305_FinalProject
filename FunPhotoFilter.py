@@ -26,7 +26,7 @@ def show_image(img):
 window = tk.Tk()
 window.title("Fun Photo Filters")
 
-image_label = tk.LabelWindow
+image_label = tk.Label(window)
 image_label.pack()
 
     
