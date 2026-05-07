@@ -15,7 +15,7 @@ def loading_image():
 # trying to show image in GUI window
 
 def show_image(img):
-    img = img.resize((400,400))
+    img = img.resize((800,800))
 
     img_tk = ImageTk.PhotoImage(img)
 
@@ -31,5 +31,4 @@ image_label.pack()
 
 tk.Button(window, text= "Load Image", command= loading_image).pack()
 
-window.mainloop
-
+window.mainloop()
