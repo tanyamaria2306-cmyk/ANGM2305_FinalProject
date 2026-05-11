@@ -38,9 +38,9 @@ def saturated():
 
         r, g, b = current_image.split()
 
-        r = r.point(lambda i: min(255, int(i * 1.2)))
-        g = g.point(lambda i: min(255, int(i * 1.2)))
-        b = b.point(lambda i: min(255, int(i * 1.2)))
+        r = r.point(lambda i: min(255, int(i * 5.2)))
+        g = g.point(lambda i: min(255, int(i * 5.2)))
+        b = b.point(lambda i: min(255, int(i * 5.2)))
 
         current_image = Image.merge("RGB", (r, g ,b))
         show_image = current_image
