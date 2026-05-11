@@ -15,12 +15,35 @@ def loading_image():
 # trying to show image in GUI window
 
 def show_image(img):
-    img = img.resize((800,800))
+    img = img.resize((1000,1000))
 
     img_tk = ImageTk.PhotoImage(img)
 
     image_label.config(image=img_tk)
     image_label.image = img_tk 
+
+# FILTER TIME
+def noir():
+    global current_image
+
+    if current_image:
+        current_image = ImageOps.grayscale(current_image).convert("RGB")
+        show_image(current_image)
+
+def saturated():
+    global current_image
+
+    if current_image:
+        current_image = current_image.convert("RGB")
+
+        r, g, b = current_image.split()
+
+        r = r.point(lambda i: min(255, int(i * 1.2)))
+        g = g.point(lambda i: min(255, int(i * 1.2)))
+        b = b.point(lambda i: min(255, int(i * 1.2)))
+
+        current_image = Image.merge("RGB", (r, g ,b))
+        show_image = current_image
 
 # what window will show
 window = tk.Tk()
@@ -30,5 +53,6 @@ image_label = tk.Label(window)
 image_label.pack()
 
 tk.Button(window, text= "Load Image", command= loading_image).pack()
+t
 
 window.mainloop()
