@@ -15,7 +15,7 @@ def loading_image():
 # trying to show image in GUI window
 
 def show_image(img):
-    img = img.resize((1000,1000))
+    img = img.resize((600,600))
 
     img_tk = ImageTk.PhotoImage(img)
 
@@ -53,6 +53,8 @@ image_label = tk.Label(window)
 image_label.pack()
 
 tk.Button(window, text= "Load Image", command= loading_image).pack()
-t
+
+tk.Button(window, text= "Noir Filter", command= noir).pack()
+tk.Button(window, text= "Saturated Filter", command= saturated).pack()
 
 window.mainloop()
